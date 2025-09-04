@@ -1,0 +1,136 @@
+.hero {
+  height: 100vh;
+  background: url("images/banner.jpg") no-repeat center center/cover;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+.animated-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  animation: fadeIn 3s infinite alternate;
+}
+@keyframes fadeIn {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+.feature-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Navbar saat scroll */
+.navbar-scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffc107;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+#scrollTopBtn:hover {
+  background: #e0a800;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#lightbox.active {
+  display: flex;
+}
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .navbar-brand img { width: 30px; }
+  .card { margin-bottom: 1rem; }
+  img { max-width: 100%; height: auto; }
+}
+
+/* Rating & Komentar */
+.feedback-section .star-rating {
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-section .star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.feedback-section .star.selected {
+  color: #f7b500;
+}
+
+.feedback-section textarea {
+  min-height: 80px;
+}
+
+.feedback-item {
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid #f7b500;
+  text-align: left;
+}
+
+.feedback-item .stars {
+  color: #f7b500;
+  margin-bottom: 5px;
+}
+
